@@ -1,0 +1,11 @@
+C:\Users\97254\Documents\GitHub\C_sharp_EX05\Ex05 Ofir 207438532 Yonatan 314831983\obj\Debug\EX05_01.csproj.AssemblyReference.cache
+C:\Users\97254\Documents\GitHub\C_sharp_EX05\Ex05 Ofir 207438532 Yonatan 314831983\obj\Debug\Ex05 Ofir 207438532 Yonatan 314831983.exe.config
+C:\Users\97254\Documents\GitHub\C_sharp_EX05\Ex05 Ofir 207438532 Yonatan 314831983\obj\Debug\Ex05_01.GameForm.resources
+C:\Users\97254\Documents\GitHub\C_sharp_EX05\Ex05 Ofir 207438532 Yonatan 314831983\obj\Debug\Ex05_01.GameSettingsForm.resources
+C:\Users\97254\Documents\GitHub\C_sharp_EX05\Ex05 Ofir 207438532 Yonatan 314831983\obj\Debug\EX05_01.csproj.GenerateResource.cache
+C:\Users\97254\Documents\GitHub\C_sharp_EX05\Ex05 Ofir 207438532 Yonatan 314831983\obj\Debug\EX05_01.csproj.CoreCompileInputs.cache
+C:\Users\97254\Documents\GitHub\C_sharp_EX05\Ex05 Ofir 207438532 Yonatan 314831983\obj\Debug\Ex05 Ofir 207438532 Yonatan 314831983.exe
+C:\Users\97254\Documents\GitHub\C_sharp_EX05\Ex05 Ofir 207438532 Yonatan 314831983\obj\Debug\Ex05 Ofir 207438532 Yonatan 314831983.pdb
+C:\Users\97254\Documents\GitHub\C_sharp_EX05\Ex05 Ofir 207438532 Yonatan 314831983\bin\Debug\Ex05 Ofir 207438532 Yonatan 314831983.exe.config
+C:\Users\97254\Documents\GitHub\C_sharp_EX05\Ex05 Ofir 207438532 Yonatan 314831983\bin\Debug\Ex05 Ofir 207438532 Yonatan 314831983.exe
+C:\Users\97254\Documents\GitHub\C_sharp_EX05\Ex05 Ofir 207438532 Yonatan 314831983\bin\Debug\Ex05 Ofir 207438532 Yonatan 314831983.pdb
