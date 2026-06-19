@@ -10,6 +10,5 @@ namespace Ex05_01
             Application.EnableVisualStyles();
             Application.Run(new GameSettingsForm());
         }
-
     }
 }

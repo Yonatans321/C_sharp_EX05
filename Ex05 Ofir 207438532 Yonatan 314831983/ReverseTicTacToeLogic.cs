@@ -3,18 +3,20 @@
 
 namespace Ex05_01
 {
+    public delegate void CellChangedDelegate(int i_Row, int i_Col, eCellState i_NewState);
+
     public class ReverseTicTacToeLogic
     {
         private readonly Board r_Board;
         private readonly bool r_IsVsComputer;
-        private readonly Random r_randomGeneretorForComputer;
+        private readonly Random r_RandomGeneratorForComputer;
 
         private bool m_Player1Turn;
         private int m_Player1Score;
         private int m_Player2Score;
         private int m_FilledCellsCount;
 
-        public event Action<int, int, eCellState> CellChanged;
+        public event CellChangedDelegate CellChanged;
 
         public int Player1Score
         {
@@ -37,7 +39,7 @@ namespace Ex05_01
         {
             r_IsVsComputer = i_IsVsComputer;
             r_Board = new Board(i_BoardSize);
-            r_randomGeneretorForComputer = new Random();
+            r_RandomGeneratorForComputer = new Random();
             m_Player1Score = 0;
             m_Player2Score = 0;
             m_Player1Turn = true;
@@ -52,9 +54,9 @@ namespace Ex05_01
             m_Player1Turn = true;
             m_FilledCellsCount = 0;
 
-            for (int r = 0; r < r_Board.Size; r++)
+            for (int r = 0; r < r_Board.Size; ++r)
             {
-                for (int c = 0; c < r_Board.Size; c++)
+                for (int c = 0; c < r_Board.Size; ++c)
                 {
                     OnCellChanged(r, c, eCellState.Empty);
                 }
@@ -68,11 +70,7 @@ namespace Ex05_01
 
         public bool IsComputerTurn()
         {
-            bool isComputerTurn = false;
-
-            isComputerTurn = r_IsVsComputer && !m_Player1Turn;
-
-            return isComputerTurn;
+            return r_IsVsComputer && !m_Player1Turn;
         }
 
         public void MakeMove(int i_Row, int i_Col)
@@ -99,27 +97,39 @@ namespace Ex05_01
         {
             int totalCells = r_Board.Size * r_Board.Size;
             int emptyCellsCount = totalCells - m_FilledCellsCount;
+            int rowToMove = -1;
+            int colToMove = -1;
+            bool moveFound = false;
 
             if (emptyCellsCount > 0)
             {
-                int randomEmptyCellIndex = r_randomGeneretorForComputer.Next(emptyCellsCount);
+                int randomEmptyCellIndex = r_RandomGeneratorForComputer.Next(emptyCellsCount);
                 int currentEmptyCount = 0;
 
-                for (int row = 0; row < r_Board.Size; row++)
+                for (int row = 0; row < r_Board.Size && !moveFound; ++row)
                 {
-                    for (int col = 0; col < r_Board.Size; col++)
+                    for (int col = 0; col < r_Board.Size && !moveFound; ++col)
                     {
                         if (IsCellEmpty(row, col))
                         {
                             if (currentEmptyCount == randomEmptyCellIndex)
                             {
-                                MakeMove(row, col);
-                                return;
+                                rowToMove = row;
+                                colToMove = col;
+                                moveFound = true;
                             }
-                            currentEmptyCount++;
+                            else
+                            {
+                                currentEmptyCount++;
+                            }
                         }
                     }
                 }
+            }
+
+            if (moveFound)
+            {
+                MakeMove(rowToMove, colToMove);
             }
         }
 
@@ -128,6 +138,7 @@ namespace Ex05_01
             bool isGameOver = false;
             eCellState lastPlayerState = m_Player1Turn ? eCellState.Player2 : eCellState.Player1;
             bool hasSequence = checkSequence(lastPlayerState);
+
             o_Winner = eCellState.Empty;
 
             if (hasSequence)
@@ -150,19 +161,13 @@ namespace Ex05_01
                 o_Winner = eCellState.Empty;
                 isGameOver = true;
             }
+
             return isGameOver;
         }
 
         private bool checkSequence(eCellState i_State)
         {
-            bool sequenceFound = false;
-
-            if (checkRows(i_State) || checkCols(i_State) || checkDiagonals(i_State))
-            {
-                sequenceFound = true;
-            }
-
-            return sequenceFound;
+            return checkRows(i_State) || checkCols(i_State) || checkDiagonals(i_State);
         }
 
         private bool checkRows(eCellState i_State)
@@ -185,10 +190,7 @@ namespace Ex05_01
                     }
                 }
 
-                if (isCurrentRowFull)
-                {
-                    foundSequence = true;
-                }
+                foundSequence = isCurrentRowFull || foundSequence;
             }
 
             return foundSequence;
@@ -204,6 +206,7 @@ namespace Ex05_01
                 if (!foundSequence)
                 {
                     isCurrentColFull = true;
+
                     for (int r = 0; r < r_Board.Size; ++r)
                     {
                         if (r_Board.GetCellState(r, c) != i_State)
@@ -212,10 +215,8 @@ namespace Ex05_01
                         }
                     }
                 }
-                if (isCurrentColFull)
-                {
-                    foundSequence = true;
-                }
+
+                foundSequence = isCurrentColFull || foundSequence;
             }
 
             return foundSequence;
@@ -225,7 +226,6 @@ namespace Ex05_01
         {
             bool isMainDiagonalFull = true;
             bool isSecondDiagonalFull = true;
-            bool foundSequence = false;
 
             for (int i = 0; i < r_Board.Size; ++i)
             {
@@ -240,12 +240,7 @@ namespace Ex05_01
                 }
             }
 
-            if (isMainDiagonalFull || isSecondDiagonalFull)
-            {
-                foundSequence = true;
-            }
-
-            return foundSequence;
+            return isMainDiagonalFull || isSecondDiagonalFull;
         }
     }
 }

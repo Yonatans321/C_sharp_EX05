@@ -97,7 +97,6 @@
             this.checkBoxPlayer2.TabIndex = 8;
             this.checkBoxPlayer2.UseVisualStyleBackColor = true;
             this.checkBoxPlayer2.CheckedChanged += new System.EventHandler(this.checkBoxPlayer2_CheckedChanged);
-            this.checkBoxPlayer2.Click += new System.EventHandler(this.checkBoxPlayer2_CheckedChanged);
             // 
             // numericUpDownRows
             // 
@@ -128,7 +127,7 @@
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(220, 49);
             this.buttonStart.TabIndex = 11;
-            this.buttonStart.Text = "Start!";
+            this.buttonStart.Text = "Play";
             this.buttonStart.UseVisualStyleBackColor = true;
             this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
