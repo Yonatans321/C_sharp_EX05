@@ -1,5 +1,4 @@
-﻿
-namespace Ex05_01
+﻿namespace Ex05_01
 {
     public enum eCellState
     {
@@ -7,6 +6,7 @@ namespace Ex05_01
         Player1,
         Player2
     }
+
     public class Board
     {
         private readonly eCellState[,] r_BoardMat;
@@ -26,9 +26,9 @@ namespace Ex05_01
 
         public void InitializeEmptyBoard()
         {
-            for (int i = 0; i < r_Size; i++)
+            for (int i = 0; i < r_Size; ++i)
             {
-                for (int j = 0; j < r_Size; j++)
+                for (int j = 0; j < r_Size; ++j)
                 {
                     r_BoardMat[i, j] = eCellState.Empty;
                 }

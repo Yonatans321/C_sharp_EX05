@@ -30,9 +30,9 @@ namespace Ex05_01
             string player2Name = player2TextBox.Text == "" ? "Player 2" : player2TextBox.Text;
             GameForm gameBoard = new GameForm(rows, cols, player1Name, player2Name);
 
-            this.Hide(); 
-            gameBoard.ShowDialog(); 
-            this.Close(); 
+            this.Hide();
+            gameBoard.ShowDialog();
+            this.Close();
         }
 
         private void checkBoxPlayer2_CheckedChanged(object sender, EventArgs e)
@@ -49,7 +49,5 @@ namespace Ex05_01
                 player2TextBox.Text = "[Computer]";
             }
         }
-
-        
     }
 }

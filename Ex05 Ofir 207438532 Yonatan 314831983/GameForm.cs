@@ -29,7 +29,8 @@ namespace Ex05_01
             m_Rows = i_Rows;
             m_Cols = i_Cols;
 
-            bool isComputer = (m_Player2Name == "[Computer]");
+            bool isComputer = m_Player2Name == "[Computer]";
+
             if (isComputer)
             {
                 m_Player2Name = "Computer";
@@ -44,6 +45,7 @@ namespace Ex05_01
             int scoreAreaHeight = 40;
             int windowWidth = (i_Cols * buttonSize) + (margin * 2);
             int windowHeight = (i_Rows * buttonSize) + (margin * 2) + scoreAreaHeight;
+
             this.ClientSize = new Size(windowWidth, windowHeight);
 
             createBoard(i_Rows, i_Cols, buttonSize, margin);
@@ -52,19 +54,19 @@ namespace Ex05_01
 
         private void createBoard(int i_Rows, int i_Cols, int i_ButtonSize, int i_Margin)
         {
-            for (int row = 0; row < i_Rows; row++)
+            for (int row = 0; row < i_Rows; ++row)
             {
-                for (int col = 0; col < i_Cols; col++)
+                for (int col = 0; col < i_Cols; ++col)
                 {
-                    Button btn = new Button();
-                    btn.Size = new Size(i_ButtonSize, i_ButtonSize);
-                    btn.Location = new Point(i_Margin + (col * i_ButtonSize), i_Margin + (row * i_ButtonSize));
-                    btn.Font = new Font("Arial", 20, FontStyle.Bold);
+                    Button boardButton = new Button();
 
-                    btn.Click += btn_Click;
-                    this.Controls.Add(btn);
+                    boardButton.Size = new Size(i_ButtonSize, i_ButtonSize);
+                    boardButton.Location = new Point(i_Margin + (col * i_ButtonSize), i_Margin + (row * i_ButtonSize));
+                    boardButton.Font = new Font("Arial", 20, FontStyle.Bold);
+                    boardButton.Click += boardButton_Click;
+                    this.Controls.Add(boardButton);
 
-                    m_BoardButtons[row, col] = btn;
+                    m_BoardButtons[row, col] = boardButton;
                 }
             }
         }
@@ -85,8 +87,8 @@ namespace Ex05_01
 
         private void updateScoreLabel()
         {
-            m_LabelPlayer1Score.Text = $"{m_Player1Name}: {m_GameLogic.Player1Score}";
-            m_LabelPlayer2Score.Text = $"{m_Player2Name}: {m_GameLogic.Player2Score}";
+            m_LabelPlayer1Score.Text = string.Format("{0}: {1}", m_Player1Name, m_GameLogic.Player1Score);
+            m_LabelPlayer2Score.Text = string.Format("{0}: {1}", m_Player2Name, m_GameLogic.Player2Score);
 
             if (m_GameLogic.CurrentPlayerState == eCellState.Player1)
             {
@@ -99,7 +101,7 @@ namespace Ex05_01
                 m_LabelPlayer2Score.Font = new Font(m_LabelPlayer2Score.Font, FontStyle.Bold);
             }
 
-            int spacing = 20; 
+            int spacing = 20;
             int totalWidth = m_LabelPlayer1Score.Width + spacing + m_LabelPlayer2Score.Width;
             int xLocation = (this.ClientSize.Width - totalWidth) / 2;
             int yLocation = this.ClientSize.Height - 30;
@@ -122,22 +124,22 @@ namespace Ex05_01
                 changedButton.Text = "O";
                 changedButton.Enabled = false;
             }
-            else 
+            else
             {
                 changedButton.Text = "";
                 changedButton.Enabled = true;
             }
         }
 
-        private void btn_Click(object sender, EventArgs e)
+        private void boardButton_Click(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
             int rowToPlay = -1;
             int colToPlay = -1;
 
-            for (int r = 0; r < m_Rows; r++)
+            for (int r = 0; r < m_Rows; ++r)
             {
-                for (int c = 0; c < m_Cols; c++)
+                for (int c = 0; c < m_Cols; ++c)
                 {
                     if (m_BoardButtons[r, c] == clickedButton)
                     {
@@ -179,12 +181,12 @@ namespace Ex05_01
                 if (winner == eCellState.Player1)
                 {
                     resultTitle = "A Win!";
-                    resultMessage = $"The winner is {m_Player1Name}!";
+                    resultMessage = string.Format("The winner is {0}!", m_Player1Name);
                 }
                 else if (winner == eCellState.Player2)
                 {
                     resultTitle = "A Win!";
-                    resultMessage = $"The winner is {m_Player2Name}!";
+                    resultMessage = string.Format("The winner is {0}!", m_Player2Name);
                 }
                 else
                 {
@@ -192,7 +194,7 @@ namespace Ex05_01
                     resultMessage = "Tie!";
                 }
 
-                string fullMessage = $"{resultMessage}\nWould you like to play another round?";
+                string fullMessage = string.Format("{0}\nWould you like to play another round?", resultMessage);
                 DialogResult result = MessageBox.Show(this, fullMessage, resultTitle, MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
