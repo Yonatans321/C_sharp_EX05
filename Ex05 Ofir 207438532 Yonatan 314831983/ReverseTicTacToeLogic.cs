@@ -75,15 +75,14 @@ namespace Ex05_01
 
         public void MakeMove(int i_Row, int i_Col)
         {
-            if (IsCellEmpty(i_Row, i_Col))
-            {
-                eCellState currentPlayerState = m_Player1Turn ? eCellState.Player1 : eCellState.Player2;
+            eCellState currentPlayerState = m_Player1Turn ? eCellState.Player1 : eCellState.Player2;
 
-                r_Board.UpdateCell(i_Row, i_Col, currentPlayerState);
-                OnCellChanged(i_Row, i_Col, currentPlayerState);
-                m_FilledCellsCount++;
-                m_Player1Turn = !m_Player1Turn;
-            }
+            r_Board.UpdateCell(i_Row, i_Col, currentPlayerState);
+
+            OnCellChanged(i_Row, i_Col, currentPlayerState);
+
+            m_FilledCellsCount++;
+            m_Player1Turn = !m_Player1Turn;
         }
 
         protected virtual void OnCellChanged(int i_Row, int i_Col, eCellState i_NewState)
@@ -168,14 +167,7 @@ namespace Ex05_01
 
         private bool checkSequence(eCellState i_State)
         {
-            bool sequenceFound = false;
-
-            if (checkRows(i_State) || checkCols(i_State) || checkDiagonals(i_State))
-            {
-                sequenceFound = true;
-            }
-
-            return sequenceFound;
+            return checkRows(i_State) || checkCols(i_State) || checkDiagonals(i_State);
         }
 
         private bool checkRows(eCellState i_State)
@@ -198,10 +190,7 @@ namespace Ex05_01
                     }
                 }
 
-                if (isCurrentRowFull)
-                {
-                    foundSequence = true;
-                }
+                foundSequence = isCurrentRowFull || foundSequence;
             }
 
             return foundSequence;
@@ -227,10 +216,7 @@ namespace Ex05_01
                     }
                 }
 
-                if (isCurrentColFull)
-                {
-                    foundSequence = true;
-                }
+                foundSequence = isCurrentColFull || foundSequence;
             }
 
             return foundSequence;
@@ -254,14 +240,7 @@ namespace Ex05_01
                 }
             }
 
-            bool foundSequence = false;
-
-            if (isMainDiagonalFull || isSecondDiagonalFull)
-            {
-                foundSequence = true;
-            }
-
-            return foundSequence;
+            return isMainDiagonalFull || isSecondDiagonalFull;
         }
     }
 }
