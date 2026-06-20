@@ -75,14 +75,17 @@ namespace Ex05_01
 
         public void MakeMove(int i_Row, int i_Col)
         {
-            eCellState currentPlayerState = m_Player1Turn ? eCellState.Player1 : eCellState.Player2;
+            if (IsCellEmpty(i_Row, i_Col))
+            {
+                eCellState currentPlayerState = m_Player1Turn ? eCellState.Player1 : eCellState.Player2;
 
-            r_Board.UpdateCell(i_Row, i_Col, currentPlayerState);
+                r_Board.UpdateCell(i_Row, i_Col, currentPlayerState);
 
-            OnCellChanged(i_Row, i_Col, currentPlayerState);
+                OnCellChanged(i_Row, i_Col, currentPlayerState);
 
-            m_FilledCellsCount++;
-            m_Player1Turn = !m_Player1Turn;
+                m_FilledCellsCount++;
+                m_Player1Turn = !m_Player1Turn;
+            }
         }
 
         protected virtual void OnCellChanged(int i_Row, int i_Col, eCellState i_NewState)
