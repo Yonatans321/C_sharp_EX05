@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\97254\\Documents\\GitHub\\C_sharp_EX05\\Ex05 Ofir 207438532 Yonatan 314831983\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3D571D33-06A4-4523-956C-4D4033977525}|Ex05_01.csproj|c:\\users\\97254\\documents\\github\\c_sharp_ex05\\ex05 ofir 207438532 yonatan 314831983\\reversetictactoelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D571D33-06A4-4523-956C-4D4033977525}|Ex05_01.csproj|solutionrelative:reversetictactoelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D571D33-06A4-4523-956C-4D4033977525}|Ex05 Ofir 207438532 Yonatan 314831983.csproj|C:\\Users\\97254\\Documents\\GitHub\\C_sharp_EX05\\Ex05 Ofir 207438532 Yonatan 314831983\\reversetictactoelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D571D33-06A4-4523-956C-4D4033977525}|Ex05 Ofir 207438532 Yonatan 314831983.csproj|solutionrelative:reversetictactoelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3D571D33-06A4-4523-956C-4D4033977525}|Ex05_01.csproj|c:\\users\\97254\\documents\\github\\c_sharp_ex05\\ex05 ofir 207438532 yonatan 314831983\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D571D33-06A4-4523-956C-4D4033977525}|Ex05_01.csproj|solutionrelative:gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,14 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3D571D33-06A4-4523-956C-4D4033977525}|Ex05 Ofir 207438532 Yonatan 314831983.csproj|C:\\Users\\97254\\Documents\\GitHub\\C_sharp_EX05\\Ex05 Ofir 207438532 Yonatan 314831983\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D571D33-06A4-4523-956C-4D4033977525}|Ex05 Ofir 207438532 Yonatan 314831983.csproj|solutionrelative:board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D571D33-06A4-4523-956C-4D4033977525}|Ex05_01.csproj|c:\\users\\97254\\documents\\github\\c_sharp_ex05\\ex05 ofir 207438532 yonatan 314831983\\reversetictactoelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D571D33-06A4-4523-956C-4D4033977525}|Ex05_01.csproj|solutionrelative:reversetictactoelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D571D33-06A4-4523-956C-4D4033977525}|Ex05 Ofir 207438532 Yonatan 314831983.csproj|C:\\Users\\97254\\Documents\\GitHub\\C_sharp_EX05\\Ex05 Ofir 207438532 Yonatan 314831983\\reversetictactoelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D571D33-06A4-4523-956C-4D4033977525}|Ex05 Ofir 207438532 Yonatan 314831983.csproj|solutionrelative:reversetictactoelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3D571D33-06A4-4523-956C-4D4033977525}|Ex05_01.csproj|c:\\users\\97254\\documents\\github\\c_sharp_ex05\\ex05 ofir 207438532 yonatan 314831983\\gamesettingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -66,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Board.cs",
               "DocumentMoniker": "C:\\Users\\97254\\Documents\\GitHub\\C_sharp_EX05\\Ex05 Ofir 207438532 Yonatan 314831983\\Board.cs",
               "RelativeDocumentMoniker": "Board.cs",
@@ -99,13 +99,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "ReverseTicTacToeLogic.cs",
               "DocumentMoniker": "C:\\Users\\97254\\Documents\\GitHub\\C_sharp_EX05\\Ex05 Ofir 207438532 Yonatan 314831983\\ReverseTicTacToeLogic.cs",
               "RelativeDocumentMoniker": "ReverseTicTacToeLogic.cs",
               "ToolTip": "C:\\Users\\97254\\Documents\\GitHub\\C_sharp_EX05\\Ex05 Ofir 207438532 Yonatan 314831983\\ReverseTicTacToeLogic.cs",
               "RelativeToolTip": "ReverseTicTacToeLogic.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAwIYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAOsAAAAAAAAAAAAcwPAAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-20T07:58:24.062Z",
               "EditorCaption": ""
@@ -186,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "GameForm.cs",
               "DocumentMoniker": "C:\\Users\\97254\\Documents\\GitHub\\C_sharp_EX05\\Ex05 Ofir 207438532 Yonatan 314831983\\GameForm.cs",
               "RelativeDocumentMoniker": "GameForm.cs",
@@ -210,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "ReverseTicTacToeLogic.cs",
               "DocumentMoniker": "C:\\Users\\97254\\Documents\\GitHub\\C_sharp_EX05\\Ex05 Ofir 207438532 Yonatan 314831983\\ReverseTicTacToeLogic.cs",
               "RelativeDocumentMoniker": "ReverseTicTacToeLogic.cs",
@@ -245,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Board.cs",
               "DocumentMoniker": "C:\\Users\\97254\\Documents\\GitHub\\C_sharp_EX05\\Ex05 Ofir 207438532 Yonatan 314831983\\Board.cs",
               "RelativeDocumentMoniker": "Board.cs",
