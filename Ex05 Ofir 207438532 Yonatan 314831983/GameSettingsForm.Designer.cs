@@ -102,7 +102,7 @@
             // 
             this.numericUpDownRows.Location = new System.Drawing.Point(118, 221);
             this.numericUpDownRows.Maximum = new decimal(new int[] {
-            9,
+            10,
             0,
             0,
             0});
@@ -144,7 +144,7 @@
             // 
             this.numericUpDownCols.Location = new System.Drawing.Point(271, 221);
             this.numericUpDownCols.Maximum = new decimal(new int[] {
-            9,
+            10,
             0,
             0,
             0});
